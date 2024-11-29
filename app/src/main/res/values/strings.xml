@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">Yoga App Admin</string>
+    <string name="day_of_week_prompt">Select Day of the Week</string>
+    <string name="class_type_prompt">Select Class Type</string>
+    <!-- Add other string resources as needed -->
+</resources>

@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+    
+    <TextView
+        android:id="@+id/searchTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Search Classes"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="16dp"/>
+        
+    <RadioGroup
+        android:id="@+id/searchTypeGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="16dp">
+        
+        <RadioButton
+            android:id="@+id/radioTeacher"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Teacher"
+            android:checked="true"/>
+            
+        <RadioButton
+            android:id="@+id/radioDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Date"
+            android:layout_marginStart="16dp"/>
+            
+        <RadioButton
+            android:id="@+id/radioDayOfWeek"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Day of Week"
+            android:layout_marginStart="16dp"/>
+    </RadioGroup>
+    
+    <!-- Container for search inputs -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp">
+        
+        <!-- Teacher Search -->
+        <EditText
+            android:id="@+id/teacherSearch"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:hint="Enter teacher name"
+            android:visibility="visible"/>
+            
+        <!-- Date Search -->
+        <LinearLayout
+            android:id="@+id/dateSearchLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+            
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:orientation="horizontal">
+                
+                <EditText
+                    android:id="@+id/dateSearch"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:hint="Select date"
+                    android:focusable="false"/>
+                    
+                <ImageButton
+                    android:id="@+id/calendarButton"
+                    android:layout_width="56dp"
+                    android:layout_height="match_parent"
+                    android:src="@android:drawable/ic_menu_my_calendar"
+                    android:contentDescription="Calendar"/>
+            </LinearLayout>
+            
+            <Button
+                android:id="@+id/dateSearchButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Search by Date"
+                android:layout_marginTop="8dp"/>
+        </LinearLayout>
+        
+        <!-- Day of Week Search -->
+        <LinearLayout
+            android:id="@+id/dayOfWeekLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+            
+            <Spinner
+                android:id="@+id/dayOfWeekSpinner"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"/>
+                
+            <Button
+                android:id="@+id/dayOfWeekSearchButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Search by Day"
+                android:layout_marginTop="8dp"/>
+        </LinearLayout>
+    </FrameLayout>
+    
+    <ListView
+        android:id="@+id/searchResultsListView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:dividerHeight="8dp" />
+        
+    <Button
+        android:id="@+id/backButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Back" />
+</LinearLayout>
